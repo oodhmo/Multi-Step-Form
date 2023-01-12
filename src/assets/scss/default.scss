@@ -33,7 +33,7 @@ body {
         box-sizing: border-box;
 
         display: grid;
-        grid-template-columns: 300px 700px;
+        grid-template-columns: 300px 610px;
     }
 }
 
@@ -84,4 +84,71 @@ body {
             letter-spacing: 1px;
         }
     }
+}
+
+.content {
+    font-family: "ubuntu-regular";
+    display: grid;
+    grid-template-rows: 50px 55px 360px 50px;
+    width: 500px;
+    position: absolute;
+    top: 50%;
+    left: 38%;
+    transform: translateY(-50%);
+
+    .title {
+        font-family: "ubuntu-bold";
+        font-size: 30px;
+        color: #1A365B;
+    }
+
+    .semi-title {
+        color: #95969B;
+    }
+}
+
+// 텍스트 폼
+label {
+    display: block;
+    font-size: 14px;   
+    margin-bottom: 5px;
+}
+
+input {
+    font-family: "ubuntu-bold";
+    border: 1px solid #D9D9DB;
+    border-radius: 10px;
+    padding: 15px;
+    width: calc(100% - 30px);
+    font-size: 16px;
+    color: #1A365B;
+}
+
+input:focus {
+    outline: 1px solid #534D93;
+    border: 1px solid #534D93;
+}
+
+input::placeholder {
+    font-family: "ubuntu-regular";
+    color:#98979D;
+}
+
+.form {
+    margin-bottom: 20px;
+}
+
+.rgt-btn, .lgt-btn {
+    cursor:pointer;
+    font-family: "ubuntu-regular";
+    color: white;
+    background-color: #174A89;
+    border: 1px solid #174A89;
+    border-radius: 8px;
+    padding: 13px 18px;
+    font-size: 16px;
+}
+
+.rgt-btn {
+    float: right;
 }

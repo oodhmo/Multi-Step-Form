@@ -1,0 +1,22 @@
+[
+    {
+        "id": "1",
+        "title": "Personal info",
+        "semititle": "Please provide your name, email address, and phone number."
+    },
+    {
+        "id": "2",
+        "title": "Select your plan",
+        "semititle": "You have the option of monthly or yearly billing."
+    },
+    {
+        "id": "3",
+        "title": "Pick add-ons",
+        "semititle": "Add-ons help enhance your gaming experience."
+    },
+    {
+        "id": "4",
+        "title": "Finishing up",
+        "semititle": "Double-check everything looks OK before confirming."
+    }
+]
