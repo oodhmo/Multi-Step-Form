@@ -1,0 +1,16 @@
+ul li {
+  list-style: none;
+}
+
+@font-face {
+  font-family: "ubuntu-regular";
+  src: url("@/assets/fonts/Ubuntu-Regular.ttf");
+}
+@font-face {
+  font-family: "ubuntu-medium";
+  src: url("@/assets/fonts/Ubuntu-Medium.ttf");
+}
+@font-face {
+  font-family: "ubuntu-bold";
+  src: url("@/assets/fonts/Ubuntu-Bold.ttf");
+}/*# sourceMappingURL=commons.css.map */
