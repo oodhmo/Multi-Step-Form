@@ -152,12 +152,23 @@ input::placeholder {
     margin-bottom: 20px;
 }
 
-.rgt-btn, .lgt-btn {
+
+/* ------------------------------ STEP 2 ------------------------------ */
+
+.options {
+    display: flex;
+}
+
+.option {
+    cursor: pointer;
+    border: 1px solid #D9D9DB;
+}
+
+
+/* ------------------------------ BUTTONS ------------------------------ */
+.rgt-btn, .lft-btn {
     cursor:pointer;
     font-family: "ubuntu-regular";
-    color: white;
-    background-color: #174A89;
-    border: 1px solid #174A89;
     border-radius: 8px;
     padding: 13px 18px;
     font-size: 16px;
@@ -165,4 +176,24 @@ input::placeholder {
 
 .rgt-btn {
     float: right;
+    color: white;
+    background-color: #03295A;
+    border: 1px solid #03295A;
 }
+
+.rgt-btn:hover {
+    background-color: #174A89;
+    border: 1px solid #174A89;
+}
+
+.lft-btn {
+    color: #93939B;
+    background-color: white;
+    border: 1px solid white;
+}
+
+.lft-btn:hover {
+    color: #03295A;
+}
+
+
