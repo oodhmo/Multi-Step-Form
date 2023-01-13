@@ -108,13 +108,16 @@ body {
 }
 
 // 텍스트 폼
+.form {
+    margin-bottom: 20px;
+    label {
+        font-size: 14px;   
+    }
+}
+
 .labels {
     display: flex;
     margin-bottom: 7px;
-}
-
-label {
-    font-size: 14px;   
 }
 
 .alert {
@@ -148,22 +151,105 @@ input::placeholder {
     border: 1px solid #9D5A63;
 }
 
-.form {
-    margin-bottom: 20px;
-}
 
 
 /* ------------------------------ STEP 2 ------------------------------ */
 
+// 3 buttons
 .options {
     display: flex;
+    justify-content: space-between;
+
+    .icon {
+        margin-bottom: 40px;
+    }
 }
 
 .option {
+    padding: 20px 18px;
+
     cursor: pointer;
+    background-color: white;
     border: 1px solid #D9D9DB;
+    border-radius: 10px;
+    
+    width: 150px;
+    //height: 170px;
+    text-align: left;
 }
 
+.option-nm {
+    font-family: "ubuntu-bold";
+    font-size: 16px;
+    color: #1A365B;
+    margin-bottom: 6px;
+}
+
+.select-area {
+    padding-top: 25px;
+}
+
+.btn-area {
+    background-color: #F8F9FE;
+    padding: 15px;
+
+    border-radius: 11px;
+    text-align: center;
+    align-items: center;
+}
+
+.dollar {
+    font-size: 14px;
+    color: #95969B;
+    margin-bottom: 4px;
+}
+
+.period {
+    font-size: 14px;
+    color: #9696A0;
+    font-family: 'ubuntu-bold';
+}
+
+.selected {
+    color: #1A365B;
+}
+
+.discount {
+    color: #1A365B;
+}
+
+//toggle switch
+.switch {
+    margin: 0 25px;
+    width: 38px;
+    height: 20px;
+    display: inline-block;
+    position: relative;
+    border-radius: 30px;
+    background-color: #03295A;
+    cursor:pointer;
+
+    top: 4px;
+}
+
+.toggle-btn {
+    width: 12px;
+    height: 12px;
+    position: absolute;
+    top: 20%;
+    left: 10px;
+    transform: translate(-50%);
+    border-radius: 50%;
+    background: white;
+}
+
+#toggle:checked ~ .switch .toggle-btn {
+    left: 75%;
+}
+
+.switch, .toggle-btn {
+    transition: all 0.2s ease-in;
+}
 
 /* ------------------------------ BUTTONS ------------------------------ */
 .rgt-btn, .lft-btn {

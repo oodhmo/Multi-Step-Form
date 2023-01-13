@@ -18,6 +18,8 @@
             <div class="title">{{nowContent.title}}</div>
             <div class="semi-title">{{ nowContent.semititle }}</div>
             <div class="forms">
+
+              <!--          STEP 1          -->
               <div v-if="commonsStore.nowTab === '1'">
                 <div class="form form-name">
                   <div class="labels">
@@ -43,15 +45,46 @@
                   <input v-model="commonsStore.personalInfo.phone" type="text" id="phone" placeholder="e.g. +1 234 567 890" :class="[{'error': validation.phoneVal === false}]" required/>
                 </div>
               </div>
+
+              <!--          STEP 2          -->
               <div v-else-if="commonsStore.nowTab === '2'">
-                content2
+
+                <!-- 3 buttons -->
+                <div class="options">
+                  <button v-for="item in items.STEP2" :key="item.name" class="option">
+                    <img :src="require(`@/assets/images/${item.icon}`)" class="icon" />
+                    <div class="option-nm">{{ item.name }}</div>
+                    <div class="dollar" v-if="!isYearly">{{ item.monthly }}</div>
+                    <div class="dollar" v-if="isYearly">{{ item.yearly }}</div>
+                    <div v-if="isYearly" class="discount">{{ item.discount }}</div>
+                  </button>
+                </div>
+
+                <!-- toggle -->
+                <div class="select-area">
+                  <div class="btn-area">
+                    <span :class="['period', {'selected':!isYearly}]">Monthly</span>
+                    <span class="toggle">
+                      <input type="checkbox" id="toggle" :value="isYearly" @change="setOptions" hidden/>
+                      <label for="toggle" class="switch">
+                        <span class="toggle-btn"></span>
+                      </label>
+                    </span>
+                    <span :class="['period', {'selected':isYearly}]">Yearly</span>
+                  </div>
+                </div>
               </div>
+
+              <!--          STEP 3          -->
               <div v-else-if="commonsStore.nowTab === '3'">
                 content3
               </div>
+
+              <!--          STEP 4          -->
               <div v-else-if="commonsStore.nowTab === '4'">
                 content4
               </div>
+              
             </div>
             <div class="btns">
               <button class="lft-btn" @click="goBack" v-if="commonsStore.nowTab !== '1'">Go Back</button>
@@ -74,6 +107,7 @@ import _ from 'lodash'
 
 const tabs = require('@/assets/data/tabs-info.json')
 const content = require('@/assets/data/content.json')
+const items = require('@/assets/data/items.json')
 
 const commonsStore = useCommonsStore()
 
@@ -93,16 +127,24 @@ const setTabContent = (tabId:string) => {
   })
 }
 
-const onSubmit = () => {
+const onSubmit = () : void => {
   if(checkForm()) {
     setTabContent(String(Number(commonsStore.nowTab)+1))
   }
 }
 
-const goBack = () => {
+const goBack = () : void => {
   setTabContent(String(Number(commonsStore.nowTab)-1))
 }
- 
+
+// step2
+
+const isYearly : Ref<boolean> = ref(false)
+
+const setOptions = () => {
+  isYearly.value = !isYearly.value
+}
+
 // validation check
 
 // step1
