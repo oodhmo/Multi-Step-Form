@@ -51,7 +51,7 @@
 
                 <!-- 3 buttons -->
                 <div class="options">
-                  <button v-for="item in items.STEP2" :key="item.name" class="option">
+                  <button v-for="item in items.STEP2" :key="item.name" :class="['option', {'now-plan': item.id === commonsStore.plan}]" @click="commonsStore.setPlanItem(item.id)">
                     <img :src="require(`@/assets/images/${item.icon}`)" class="icon" />
                     <div class="option-nm">{{ item.name }}</div>
                     <div class="dollar" v-if="!isYearly">{{ item.monthly }}</div>
@@ -110,6 +110,8 @@ const content = require('@/assets/data/content.json')
 const items = require('@/assets/data/items.json')
 
 const commonsStore = useCommonsStore()
+
+//left nav
 
 let nowContent : IContent = reactive({
   id: "",

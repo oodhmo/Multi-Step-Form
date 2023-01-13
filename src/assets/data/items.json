@@ -1,6 +1,7 @@
 {
     "STEP2" : [
         {
+            "id": "1",
             "name": "Arcade",
             "monthly": "$9/mo",
             "yearly": "$90/yr",
@@ -8,6 +9,7 @@
             "icon": "icon-arcade.svg"
         },
         {
+            "id": "2",
             "name": "Advanced",
             "monthly": "$12/mo",
             "yearly": "$120/yr",
@@ -15,6 +17,7 @@
             "icon": "icon-advanced.svg"
         },
         {
+            "id": "3",
             "name": "Pro",
             "monthly": "$15/mo",
             "yearly": "$150/yr",

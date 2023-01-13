@@ -178,6 +178,16 @@ input::placeholder {
     text-align: left;
 }
 
+.option:hover {
+    background-color: #F8F9FE;
+    border: 1px solid #534D93;
+}
+
+.now-plan {
+    background-color: #F8F9FE;
+    border: 1px solid #534D93;
+}
+
 .option-nm {
     font-family: "ubuntu-bold";
     font-size: 16px;

@@ -8,11 +8,15 @@ export const useCommonsStore = defineStore('commonsStore', {
             name: '',
             email: '',
             phone: ''
-        } as IPersonal
+        } as IPersonal,
+        plan: '1' as string
     }),
     actions: {
         setTabActive(tabId:string) {
             this.nowTab = tabId
+        },
+        setPlanItem(planId:string) {
+            this.plan = planId
         }
     }
 })
