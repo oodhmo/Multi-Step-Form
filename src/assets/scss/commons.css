@@ -2,6 +2,38 @@ ul li {
   list-style: none;
 }
 
+input {
+  cursor: pointer;
+}
+
+.non-selected {
+  background-color: white;
+  border: 1px solid #D9D9DB;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.non-selected:hover {
+  transition: all 0.2s ease-in;
+  border: 1px solid #534D93 !important;
+}
+
+.selected {
+  background-color: #F8F9FE;
+  border: 1px solid #534D93;
+}
+
+.card-nm {
+  font-family: "ubuntu-bold";
+  font-size: 16px;
+  color: #1A365B;
+}
+
+.card-des {
+  font-size: 14px;
+  color: #95969B;
+}
+
 @font-face {
   font-family: "ubuntu-regular";
   src: url("@/assets/fonts/Ubuntu-Regular.ttf");

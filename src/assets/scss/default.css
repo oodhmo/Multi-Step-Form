@@ -106,7 +106,7 @@ body {
   font-family: "ubuntu-bold";
 }
 
-input {
+.form input {
   font-family: "ubuntu-bold";
   border: 1px solid #D9D9DB;
   border-radius: 10px;
@@ -115,23 +115,20 @@ input {
   font-size: 16px;
   color: #1A365B;
 }
-
-input:focus {
+.form input:focus {
+  transition: all 0.2s ease-in;
   outline: 1px solid #534D93;
   border: 1px solid #534D93;
 }
-
-input::-moz-placeholder {
+.form input::-moz-placeholder {
   font-family: "ubuntu-regular";
   color: #98979D;
 }
-
-input:-ms-input-placeholder {
+.form input:-ms-input-placeholder {
   font-family: "ubuntu-regular";
   color: #98979D;
 }
-
-input::placeholder {
+.form input::placeholder {
   font-family: "ubuntu-regular";
   color: #98979D;
 }
@@ -152,27 +149,16 @@ input::placeholder {
 
 .option {
   padding: 20px 18px;
-  cursor: pointer;
-  background-color: white;
-  border: 1px solid #D9D9DB;
-  border-radius: 10px;
   width: 150px;
   text-align: left;
 }
 
 .option:hover {
   border: 1px solid #534D93;
-}
-
-.now-plan {
-  background-color: #F8F9FE;
-  border: 1px solid #534D93;
+  transition: all 0.1s ease-in;
 }
 
 .option-nm {
-  font-family: "ubuntu-bold";
-  font-size: 16px;
-  color: #1A365B;
   margin-bottom: 6px;
 }
 
@@ -189,8 +175,6 @@ input::placeholder {
 }
 
 .dollar {
-  font-size: 14px;
-  color: #95969B;
   margin-bottom: 4px;
 }
 
@@ -200,8 +184,9 @@ input::placeholder {
   font-family: "ubuntu-bold";
 }
 
-.selected {
+.m-or-y {
   color: #1A365B;
+  transition: all 0.1s ease-in;
 }
 
 .discount {
@@ -237,6 +222,42 @@ input::placeholder {
 
 .switch, .toggle-btn {
   transition: all 0.2s ease-in;
+}
+
+/* ------------------------------ STEP 3 ------------------------------ */
+.addon {
+  font-size: 15px;
+  display: flex;
+  padding: 15px;
+  width: 100%;
+  align-items: center;
+  display: grid;
+  grid-template-columns: 1fr 6fr 1fr;
+}
+.addon .checkbox {
+  position: relative;
+  text-align: center;
+  width: 18px;
+  height: 18px;
+  border: 1px solid #D9D9DB;
+  border-radius: 4px;
+}
+.addon .checkbox img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.addon .check {
+  background-color: #413EFF;
+  border: 1px solid #413EFF;
+  transition: all 0.05s ease-in;
+}
+.addon .txts {
+  text-align: left;
+}
+.addon .price {
+  margin-left: auto;
 }
 
 /* ------------------------------ BUTTONS ------------------------------ */

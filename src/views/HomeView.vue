@@ -51,11 +51,11 @@
 
                 <!-- 3 buttons -->
                 <div class="options">
-                  <button v-for="item in items.STEP2" :key="item.name" :class="['option', {'now-plan': item.id === commonsStore.plan}]" @click="commonsStore.setPlanItem(item.id)">
+                  <button v-for="item in items.STEP2" :key="item.name" :class="['option non-selected', {'selected': item.id === commonsStore.plan}]" @click="commonsStore.setPlanItem(item.id)">
                     <img :src="require(`@/assets/images/${item.icon}`)" class="icon" />
-                    <div class="option-nm">{{ item.name }}</div>
-                    <div class="dollar" v-if="!isYearly">{{ item.monthly }}</div>
-                    <div class="dollar" v-if="isYearly">{{ item.yearly }}</div>
+                    <div class="option-nm card-nm">{{ item.name }}</div>
+                    <div class="dollar card-des" v-if="!isYearly">{{ item.monthly }}</div>
+                    <div class="dollar card-des" v-if="isYearly">{{ item.yearly }}</div>
                     <div v-if="isYearly" class="discount">{{ item.discount }}</div>
                   </button>
                 </div>
@@ -63,21 +63,32 @@
                 <!-- toggle -->
                 <div class="select-area">
                   <div class="btn-area">
-                    <span :class="['period', {'selected':!isYearly}]">Monthly</span>
+                    <span :class="['period', {'m-or-y':!isYearly}]">Monthly</span>
                     <span class="toggle">
                       <input type="checkbox" id="toggle" :value="isYearly" @change="setOptions" hidden/>
                       <label for="toggle" class="switch">
                         <span class="toggle-btn"></span>
                       </label>
                     </span>
-                    <span :class="['period', {'selected':isYearly}]">Yearly</span>
+                    <span :class="['period', {'m-or-y':isYearly}]">Yearly</span>
                   </div>
                 </div>
               </div>
 
               <!--          STEP 3          -->
               <div v-else-if="commonsStore.nowTab === '3'">
-                content3
+                <div class="addons">
+                  <button v-for="addon in items.STEP3" :key="addon.id" :class="['addon non-selected', {'selected':addon.id === commonsStore.addon}]" @click="commonsStore.setAddonItems(addon.id)">
+                    <span :class="['checkbox', {'check': addon.id === commonsStore.addon}]">
+                      <img src="@/assets/images/icon-checkmark.svg">
+                    </span>
+                    <div class="txts">
+                      <div class="card-nm">{{ addon.title }}</div>
+                      <div class="card-des">{{ addon.semititle }}</div>
+                    </div>
+                    <div class="price">{{ addon.dollar }}</div>
+                  </button>
+                </div>
               </div>
 
               <!--          STEP 4          -->
