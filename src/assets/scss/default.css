@@ -88,10 +88,19 @@ body {
   color: #95969B;
 }
 
+.labels {
+  display: flex;
+  margin-bottom: 7px;
+}
+
 label {
-  display: block;
   font-size: 14px;
-  margin-bottom: 5px;
+}
+
+.alert {
+  margin-left: auto;
+  color: #9D5A63;
+  font-family: "ubuntu-bold";
 }
 
 input {
@@ -122,6 +131,11 @@ input:-ms-input-placeholder {
 input::placeholder {
   font-family: "ubuntu-regular";
   color: #98979D;
+}
+
+.error {
+  outline: 1px solid #9D5A63;
+  border: 1px solid #9D5A63;
 }
 
 .form {
