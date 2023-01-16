@@ -1,5 +1,5 @@
 import { defineStore } from 'pinia'
-import { IPersonal } from '@/types/personal'
+import { IPersonal, IStep2, IStep3 } from '@/types/items'
 
 export const useCommonsStore = defineStore('commonsStore', {
     state: () => ({
@@ -9,18 +9,23 @@ export const useCommonsStore = defineStore('commonsStore', {
             email: '',
             phone: ''
         } as IPersonal,
-        plan: '1' as string,
-        addon: '1' as string
+        plan: {} as IStep2,
+        addons: [] as Array<IStep3>
     }),
     actions: {
         setTabActive(tabId:string) {
             this.nowTab = tabId
         },
-        setPlanItem(planId:string) {
-            this.plan = planId
+        setPlanItem(plan:IStep2) {
+            this.plan = plan
         },
-        setAddonItems(addonId:string) {
-            this.addon = addonId
+        setAddonItems(addon:IStep3) {
+            if(this.addons.indexOf(addon) === -1) {
+                this.addons.push(addon)
+            }
+            else {
+                this.addons.splice(this.addons.indexOf(addon), 1)
+            }
         }
     }
 })

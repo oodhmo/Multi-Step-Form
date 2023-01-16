@@ -51,7 +51,7 @@
 
                 <!-- 3 buttons -->
                 <div class="options">
-                  <button v-for="item in items.STEP2" :key="item.name" :class="['option non-selected', {'selected': item.id === commonsStore.plan}]" @click="commonsStore.setPlanItem(item.id)">
+                  <button v-for="item in items.STEP2" :key="item.name" :class="['option non-selected', {'selected': item.id === commonsStore.plan.id}]" @click="commonsStore.setPlanItem(item)">
                     <img :src="require(`@/assets/images/${item.icon}`)" class="icon" />
                     <div class="option-nm card-nm">{{ item.name }}</div>
                     <div class="dollar card-des" v-if="!isYearly">{{ item.monthly }}</div>
@@ -78,8 +78,8 @@
               <!--          STEP 3          -->
               <div v-else-if="commonsStore.nowTab === '3'">
                 <div class="addons">
-                  <button v-for="addon in items.STEP3" :key="addon.id" :class="['addon non-selected', {'selected':addon.id === commonsStore.addon}]" @click="commonsStore.setAddonItems(addon.id)">
-                    <span :class="['checkbox', {'check': addon.id === commonsStore.addon}]">
+                  <button v-for="addon in items.STEP3" :key="addon.id" :class="['addon non-selected', {'selected':commonsStore.addons.indexOf(addon) !== -1}]" @click="commonsStore.setAddonItems(addon)">
+                    <span :class="['checkbox', {'check': commonsStore.addons.indexOf(addon) !== -1}]">
                       <img src="@/assets/images/icon-checkmark.svg">
                     </span>
                     <div class="txts">
@@ -116,6 +116,7 @@ import type { Ref } from 'vue'
 import { useCommonsStore } from '@/stores/commons'
 import { IContent } from '@/types/content'
 import _ from 'lodash'
+import { IStep2 } from '@/types/items'
 
 const tabs = require('@/assets/data/tabs-info.json')
 const content = require('@/assets/data/content.json')
@@ -161,6 +162,9 @@ const isYearly : Ref<boolean> = ref(false)
 const setOptions = () => {
   isYearly.value = !isYearly.value
 }
+
+// step4
+let totalCost: Ref<number> = ref(0)
 
 // validation check
 
