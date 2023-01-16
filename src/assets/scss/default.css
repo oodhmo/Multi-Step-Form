@@ -228,7 +228,8 @@ body {
 .addon {
   font-size: 15px;
   display: flex;
-  padding: 15px;
+  padding: 17px 15px;
+  margin-bottom: 15px;
   width: 100%;
   align-items: center;
   display: grid;
@@ -255,9 +256,11 @@ body {
 }
 .addon .txts {
   text-align: left;
+  line-height: 22px;
 }
 .addon .price {
   margin-left: auto;
+  color: #5B49D9;
 }
 
 /* ------------------------------ BUTTONS ------------------------------ */

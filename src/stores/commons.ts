@@ -10,7 +10,7 @@ export const useCommonsStore = defineStore('commonsStore', {
             phone: ''
         } as IPersonal,
         plan: '1' as string,
-        addon: '' as string
+        addon: '1' as string
     }),
     actions: {
         setTabActive(tabId:string) {

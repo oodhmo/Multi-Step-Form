@@ -66,7 +66,7 @@
                     <span :class="['period', {'m-or-y':!isYearly}]">Monthly</span>
                     <span class="toggle">
                       <input type="checkbox" id="toggle" :value="isYearly" @change="setOptions" hidden/>
-                      <label for="toggle" class="switch">
+                      <label for="toggle" class="switch" >
                         <span class="toggle-btn"></span>
                       </label>
                     </span>
@@ -86,7 +86,8 @@
                       <div class="card-nm">{{ addon.title }}</div>
                       <div class="card-des">{{ addon.semititle }}</div>
                     </div>
-                    <div class="price">{{ addon.dollar }}</div>
+                    <div class="price" v-if="!isYearly">{{ addon.monthly }}</div>
+                    <div class="price" v-if="isYearly">{{ addon.yearly }}</div>
                   </button>
                 </div>
               </div>
@@ -141,7 +142,10 @@ const setTabContent = (tabId:string) => {
 }
 
 const onSubmit = () : void => {
-  if(checkForm()) {
+  if(commonsStore.nowTab === '1' && checkForm()) {
+    setTabContent(String(Number(commonsStore.nowTab)+1))
+  }
+  else if (commonsStore.nowTab === '2' || commonsStore.nowTab === '3') {
     setTabContent(String(Number(commonsStore.nowTab)+1))
   }
 }

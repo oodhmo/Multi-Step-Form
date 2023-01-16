@@ -30,19 +30,22 @@
             "id": "1",
             "title": "Online service",
             "semititle": "Access to multiplayer games",
-            "dollar": "+$1/mo"
+            "monthly": "+$1/mo",
+            "yearly": "+$10/yr"
         },
         {
             "id": "2",
             "title": "Large storage",
             "semititle": "Extra 1TB of cloud save",
-            "dollar": "+$2/mo"
+            "monthly": "+$2/mo",
+            "yearly": "+$20/yr"
         },
         {
             "id": "3",
             "title": "Customizable profile",
             "semititle": "Custom theme on your profile",
-            "dollar": "+$2/mo"
+            "monthly": "+$2/mo",
+            "yearly": "+$20/yr"
         }
     ]
 }

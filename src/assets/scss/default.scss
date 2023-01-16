@@ -255,7 +255,8 @@ body {
 .addon {
     font-size: 15px;
     display: flex;
-    padding: 15px;
+    padding: 17px 15px;
+    margin-bottom: 15px;
     width: 100%;
     align-items: center;
 
@@ -287,10 +288,12 @@ body {
 
     .txts {
         text-align: left;
+        line-height: 22px;
     }
 
     .price {
         margin-left: auto;
+        color: #5B49D9;
     }
 }
 
