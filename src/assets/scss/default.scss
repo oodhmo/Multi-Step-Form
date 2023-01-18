@@ -476,21 +476,17 @@ body {
         }
     }
 
-    .wrapper {
-        
-    }
-
     .content {
         background-color: white;
         border-radius: 10px;
         width: 290px;
-        height: 500px;
+        //height: 500px;
         top: 57%;
         left: 50%;
         transform: translate(-50%, -50%);
         padding: 27px 25px;
 
-        grid-template-rows: 41px 70px 360px 50px;
+        grid-template-rows: 41px 70px 340px 50px;
 
         .title {
             font-size: 24px;
@@ -526,7 +522,6 @@ body {
             }
 
             .dollar {
-                
                 margin: 0;
             }
         }
@@ -602,5 +597,13 @@ body {
             font-size: 18px;
             color:#413EFF;
         } 
+    }
+
+    //thankyou
+    .appreciate {
+
+        .notice {
+            width: 290px;
+        }
     }
 }

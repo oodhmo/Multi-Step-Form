@@ -124,7 +124,8 @@
                 </div>
 
                 <div class="total">
-                  <span>Total (per month)</span>
+                  <span v-if="!isYearly">Total (per month)</span>
+                  <span v-if="isYearly">Total (per year)</span>
                   <span class="total-cost mg-lft">{{ totalCost }}</span>
                 </div>
               </div>
