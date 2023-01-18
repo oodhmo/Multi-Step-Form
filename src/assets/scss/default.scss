@@ -298,6 +298,95 @@ body {
 }
 
 
+/* ------------------------------ STEP 4 ------------------------------ */
+
+.costs {
+    background-color: #F8F9FE;
+    padding: 20px 30px;
+    border-radius: 10px;
+
+    .plan-wrap {
+        display: flex;
+    }
+
+    .plus {
+        border-bottom: 1px solid lightgray;
+        padding-bottom: 30px;
+    }
+
+    .plan {
+        line-height: 25px;
+        font-size: 17px;
+    }
+
+    .name {
+        display: flex;
+    }
+
+    .change-plan {
+        font-size: 15px;
+        cursor:pointer;
+        color: #9797A1;
+        text-decoration: underline;
+        text-underline-position:under;
+    }
+
+    .plan-cost {
+        line-height: 50px; 
+    }
+
+    .addon-wrap {
+        padding-top: 15px;
+    }
+
+    .addons {
+        display: flex;
+        color: #9797A1;
+        line-height: 37px;
+
+        .addon-cost {
+            color: #1A365B;
+        }
+    } 
+}
+
+.total {
+    padding: 30px;
+    color: #9797A1;
+    display: flex;
+    
+    .total-cost {
+        font-family: 'ubuntu-bold';
+        font-size: 20px;
+        color:#413EFF;
+    }
+}
+
+
+/* ------------------------------ thank you ------------------------------ */
+
+.appreciate {
+    position: absolute;
+    text-align: center;
+
+    top: 50%;
+    transform: translateY(-50%);
+
+    line-height: 60px;
+
+    .thank-you {
+        font-family: "ubuntu-bold";
+        font-size: 30px;
+        color: #1A365B;
+    }
+
+    .notice {
+        line-height: 25px;
+        color:#93939B;
+    }
+}
+
+
 /* ------------------------------ BUTTONS ------------------------------ */
 .rgt-btn, .lft-btn {
     cursor:pointer;
@@ -308,6 +397,7 @@ body {
 }
 
 .rgt-btn {
+    width: 110.24px;
     float: right;
     color: white;
     background-color: #03295A;
@@ -317,6 +407,16 @@ body {
 .rgt-btn:hover {
     background-color: #174A89;
     border: 1px solid #174A89;
+}
+
+.confirm {
+    background-color: #413EFF !important;
+    border: 1px solid #413EFF !important;
+}
+
+.confirm:hover {
+    background-color: #6865ff !important;
+    border: 1px solid #6865ff !important;
 }
 
 .lft-btn {

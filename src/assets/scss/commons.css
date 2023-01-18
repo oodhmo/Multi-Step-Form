@@ -34,6 +34,15 @@ input {
   color: #95969B;
 }
 
+.mg-lft {
+  margin-left: auto;
+}
+
+.impt-txt {
+  font-family: "ubuntu-bold";
+  color: #1A365B;
+}
+
 @font-face {
   font-family: "ubuntu-regular";
   src: url("@/assets/fonts/Ubuntu-Regular.ttf");

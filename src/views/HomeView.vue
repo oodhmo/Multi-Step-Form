@@ -15,8 +15,8 @@
         </div>
         <div class="wrapper">
           <div class="content">
-            <div class="title">{{nowContent.title}}</div>
-            <div class="semi-title">{{ nowContent.semititle }}</div>
+            <div class="title" v-if="nowContent.title">{{nowContent.title}}</div>
+            <div class="semi-title" v-if="nowContent.semititle">{{ nowContent.semititle }}</div>
             <div class="forms">
 
               <!--          STEP 1          -->
@@ -95,38 +95,54 @@
               <!--          STEP 4          -->
               <div v-else-if="commonsStore.nowTab === '4'" class="finishing">
                 <div class="costs">
-                  <div class="plan">
-                    <span>{{ nowPlan.name }}</span>
-                    <span v-if="!isYearly">
-                      (Monthly)
-                      <span>{{ nowPlan.monthly }}</span>
-                    </span>
-                    <span v-if="isYearly">
-                      (Yearly)
-                      <span>{{ nowPlan.yearly }}</span>
-                    </span>
-                  </div>
-                  <div @click="()=>commonsStore.nowTab = '2'" class="change-plan">Change</div>
 
-                  <div>
-                    <div v-for="addon in commonsStore.addons" :key="addon.id">
-                      <span>{{ addon.title }}</span>
-                      <span v-if="!isYearly">{{ addon.monthly }}</span>
-                      <span v-if="isYearly">{{ addon.yearly }}</span>
+                  <div :class="['plan-wrap', {'plus' : commonsStore.addons.length !== 0}]">
+                    <div class="plan">
+                      <div class="name impt-txt">
+                        <div>{{ nowPlan.name }}</div>
+                        <div v-if="!isYearly">(Monthly)</div>
+                        <div v-if="isYearly">(Yearly)</div>
+                      </div>
+                      <div @click="()=>commonsStore.nowTab = '2'" class="change-plan">Change</div>
+                    </div>
+                    <div class="plan-cost mg-lft impt-txt">
+                      <span class="">{{ isYearly ? nowPlan.yearly : nowPlan.monthly }}</span>
                     </div>
                   </div>
 
+                  <div class="addon-wrap" v-if="commonsStore.addons.length !== 0">
+                    <div v-for="addon in commonsStore.addons" :key="addon.id" class="addons">
+                      <span>{{ addon.title }}</span>
+                      <div class="addon-cost mg-lft">
+                        <span v-if="!isYearly">{{ addon.monthly }}</span>
+                        <span v-if="isYearly">{{ addon.yearly }}</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="total">
+                  <span>Total (per month)</span>
+                  <span class="total-cost mg-lft">{{ totalCost }}</span>
                 </div>
               </div>
-              <div class="total">
-                <span>Total (per month)</span>
-                <span>{{ totalCost }}</span>
+
+              <!--          Thank you page          -->
+              <div v-if="commonsStore.nowTab === '5'">
+                <diV class="appreciate">
+                  <img src="@/assets/images/icon-thank-you.svg">
+                  <div class="thank-you">Thank you!</div>
+                  <div class="notice">
+                    Thanks for confirming your subscription! We hope you have fun using our platform. If you ever need support, please feel free to email us at support@loremgaming.com.
+                  </div>
+                </diV>
               </div>
               
             </div>
-            <div class="btns">
+            <div class="btns" v-if="commonsStore.nowTab !== '5'">
               <button class="lft-btn" @click="goBack" v-if="commonsStore.nowTab !== '1'">Go Back</button>
-              <button class="rgt-btn" @click="onSubmit">Next Step</button>
+              <button class="rgt-btn" v-if="commonsStore.nowTab !== '4'" @click="onSubmit">Next Step</button>
+              <button class="rgt-btn confirm" v-else-if="commonsStore.nowTab === '4'" @click="onSubmit">Confirm</button>
             </div>
           </div>
         </div>
@@ -169,10 +185,7 @@ const setTabContent = (tabId:string) => {
 }
 
 const onSubmit = () : void => {
-  if(commonsStore.nowTab === '1' && checkForm()) {
-    setTabContent(String(Number(commonsStore.nowTab)+1))
-  }
-  else if (commonsStore.nowTab === '2' || commonsStore.nowTab === '3') {
+  if((commonsStore.nowTab === '1' && checkForm()) || (commonsStore.nowTab === '2' || commonsStore.nowTab === '3' || commonsStore.nowTab === '4')) {
     setTabContent(String(Number(commonsStore.nowTab)+1))
   }
 }
@@ -209,7 +222,7 @@ const sumCost = () => {
     isYearly.value ? addonCosts.push(Number(_.cloneDeep(addon).yearly.replace(/[^0-9]/g, ""))) : addonCosts.push(Number(_.cloneDeep(addon).monthly.replace(/[^0-9]/g, "")))
   })
 
-  totalCost.value = isYearly ? '$' + String(Number(planCost) + _.sum(addonCosts)) + '/yr' : '$' + String(Number(planCost) + _.sum(addonCosts)) + '/mo'
+  totalCost.value = isYearly.value ? '$' + String(Number(planCost) + _.sum(addonCosts)) + '/yr' : '$' + String(Number(planCost) + _.sum(addonCosts)) + '/mo'
 }
 
 watch(()=>commonsStore.nowTab, ()=>{
