@@ -9,15 +9,15 @@ export const useCommonsStore = defineStore('commonsStore', {
             email: '',
             phone: ''
         } as IPersonal,
-        plan: {} as IStep2,
+        plan: '1' as string,
         addons: [] as Array<IStep3>
     }),
     actions: {
         setTabActive(tabId:string) {
             this.nowTab = tabId
         },
-        setPlanItem(plan:IStep2) {
-            this.plan = plan
+        setPlanItem(planId:string) {
+            this.plan = planId
         },
         setAddonItems(addon:IStep3) {
             if(this.addons.indexOf(addon) === -1) {

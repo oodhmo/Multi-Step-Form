@@ -51,7 +51,7 @@
 
                 <!-- 3 buttons -->
                 <div class="options">
-                  <button v-for="item in items.STEP2" :key="item.name" :class="['option non-selected', {'selected': item.id === commonsStore.plan.id}]" @click="commonsStore.setPlanItem(item)">
+                  <button v-for="item in items.STEP2" :key="item.name" :class="['option non-selected', {'selected': item.id === commonsStore.plan}]" @click="commonsStore.setPlanItem(item.id)">
                     <img :src="require(`@/assets/images/${item.icon}`)" class="icon" />
                     <div class="option-nm card-nm">{{ item.name }}</div>
                     <div class="dollar card-des" v-if="!isYearly">{{ item.monthly }}</div>
@@ -93,8 +93,34 @@
               </div>
 
               <!--          STEP 4          -->
-              <div v-else-if="commonsStore.nowTab === '4'">
-                content4
+              <div v-else-if="commonsStore.nowTab === '4'" class="finishing">
+                <div class="costs">
+                  <div class="plan">
+                    <span>{{ nowPlan.name }}</span>
+                    <span v-if="!isYearly">
+                      (Monthly)
+                      <span>{{ nowPlan.monthly }}</span>
+                    </span>
+                    <span v-if="isYearly">
+                      (Yearly)
+                      <span>{{ nowPlan.yearly }}</span>
+                    </span>
+                  </div>
+                  <div @click="()=>commonsStore.nowTab = '2'" class="change-plan">Change</div>
+
+                  <div>
+                    <div v-for="addon in commonsStore.addons" :key="addon.id">
+                      <span>{{ addon.title }}</span>
+                      <span v-if="!isYearly">{{ addon.monthly }}</span>
+                      <span v-if="isYearly">{{ addon.yearly }}</span>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+              <div class="total">
+                <span>Total (per month)</span>
+                <span>{{ totalCost }}</span>
               </div>
               
             </div>
@@ -116,7 +142,7 @@ import type { Ref } from 'vue'
 import { useCommonsStore } from '@/stores/commons'
 import { IContent } from '@/types/content'
 import _ from 'lodash'
-import { IStep2 } from '@/types/items'
+import { IStep2, IStep3 } from '@/types/items'
 
 const tabs = require('@/assets/data/tabs-info.json')
 const content = require('@/assets/data/content.json')
@@ -164,7 +190,33 @@ const setOptions = () => {
 }
 
 // step4
-let totalCost: Ref<number> = ref(0)
+let totalCost: Ref<string> = ref('')
+let nowPlan: Ref<IStep2> = ref(_.cloneDeep(items.STEP2[0]))
+
+const setSelectedOptions = () => {
+  items.STEP2.forEach((item:IStep2) => {
+    if(item.id === commonsStore.plan) {
+      nowPlan.value = item
+    }
+  })
+  sumCost()
+}
+
+const sumCost = () => {
+  const planCost : string = isYearly.value ? _.cloneDeep(nowPlan.value).yearly.replace(/[^0-9]/g, "") : _.cloneDeep(nowPlan.value).monthly.replace(/[^0-9]/g, "")
+  let addonCosts : Array<number> = []
+  commonsStore.addons.forEach((addon:IStep3)=>{
+    isYearly.value ? addonCosts.push(Number(_.cloneDeep(addon).yearly.replace(/[^0-9]/g, ""))) : addonCosts.push(Number(_.cloneDeep(addon).monthly.replace(/[^0-9]/g, "")))
+  })
+
+  totalCost.value = isYearly ? '$' + String(Number(planCost) + _.sum(addonCosts)) + '/yr' : '$' + String(Number(planCost) + _.sum(addonCosts)) + '/mo'
+}
+
+watch(()=>commonsStore.nowTab, ()=>{
+  if(commonsStore.nowTab === '4') {
+    setSelectedOptions()
+  }
+})
 
 // validation check
 
