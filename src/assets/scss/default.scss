@@ -430,3 +430,73 @@ body {
 }
 
 
+
+/* ------------------------------------------------------------------------------------------------------------------------ 
+
+                                            Mobile 
+
+------------------------------------------------------------------------------------------------------------------------ */
+
+
+@media (max-width: 971px) {
+
+    #container {
+        width: 375px;
+        height: 667px;
+
+        .box {
+            border-radius: 0px;
+            display: inline-block;
+        }
+    }
+
+    .navbar {
+        width: 375px;
+        margin: 0;
+        background-image: url('@/assets/images/bg-sidebar-mobile.svg');
+
+        ul {
+            display: flex;
+            justify-content: center;
+            padding: 0;
+            margin: 12px 0;
+        }
+
+        .step {
+            margin: 0;
+            .num {
+                margin: 0px 8px;
+                display: flex;
+            }
+            .item {
+                margin: 0;
+                display: none;
+            }
+        }
+    }
+
+    .wrapper {
+        
+    }
+
+    .content {
+        background-color: white;
+        border-radius: 10px;
+        width: 280px;
+        height: 500px;
+        top: 57%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        padding: 27px 30px;
+
+        grid-template-rows: 41px 70px 360px 50px;
+
+        .title {
+            font-size: 24px;
+        }
+
+        .semi-title {
+            line-height: 24px;
+        }
+    }
+}

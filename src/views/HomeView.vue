@@ -13,7 +13,7 @@
             </li>
           </ul>
         </div>
-        <div class="wrapper">
+        
           <div class="content">
             <div class="title" v-if="nowContent.title">{{nowContent.title}}</div>
             <div class="semi-title" v-if="nowContent.semititle">{{ nowContent.semititle }}</div>
@@ -145,7 +145,7 @@
               <button class="rgt-btn confirm" v-else-if="commonsStore.nowTab === '4'" @click="onSubmit">Confirm</button>
             </div>
           </div>
-        </div>
+
       </div>
     </div>
   </div>

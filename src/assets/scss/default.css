@@ -374,4 +374,59 @@ body {
 
 .lft-btn:hover {
   color: #03295A;
+}
+
+/* ------------------------------------------------------------------------------------------------------------------------ 
+
+                                            Mobile 
+
+------------------------------------------------------------------------------------------------------------------------ */
+@media (max-width: 971px) {
+  #container {
+    width: 375px;
+    height: 667px;
+  }
+  #container .box {
+    border-radius: 0px;
+    display: inline-block;
+  }
+  .navbar {
+    width: 375px;
+    margin: 0;
+    background-image: url("@/assets/images/bg-sidebar-mobile.svg");
+  }
+  .navbar ul {
+    display: flex;
+    justify-content: center;
+    padding: 0;
+    margin: 12px 0;
+  }
+  .navbar .step {
+    margin: 0;
+  }
+  .navbar .step .num {
+    margin: 0px 8px;
+    display: flex;
+  }
+  .navbar .step .item {
+    margin: 0;
+    display: none;
+  }
+  .content {
+    background-color: white;
+    border-radius: 10px;
+    width: 280px;
+    height: 500px;
+    top: 57%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 27px 30px;
+    grid-template-rows: 41px 70px 360px 50px;
+  }
+  .content .title {
+    font-size: 24px;
+  }
+  .content .semi-title {
+    line-height: 24px;
+  }
 }/*# sourceMappingURL=default.css.map */
