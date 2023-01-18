@@ -102,8 +102,8 @@
                     <div class="plan">
                       <div class="name impt-txt">
                         <div>{{ nowPlan.name }}</div>
-                        <div v-if="!isYearly">(Monthly)</div>
-                        <div v-if="isYearly">(Yearly)</div>
+                        <div v-if="!isYearly">&nbsp; (Monthly)</div>
+                        <div v-if="isYearly">&nbsp; (Yearly)</div>
                       </div>
                       <div @click="()=>commonsStore.nowTab = '2'" class="change-plan">Change</div>
                     </div>

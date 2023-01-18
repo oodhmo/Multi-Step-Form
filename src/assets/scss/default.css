@@ -274,6 +274,7 @@ body {
 }
 .costs .plan-wrap {
   display: flex;
+  align-items: center;
 }
 .costs .plus {
   border-bottom: 1px solid lightgray;
@@ -296,9 +297,6 @@ body {
 .costs .plan-cost {
   line-height: 50px;
 }
-.costs .addon-wrap {
-  padding-top: 15px;
-}
 .costs .addons {
   display: flex;
   color: #9797A1;
@@ -312,6 +310,7 @@ body {
   padding: 30px;
   color: #9797A1;
   display: flex;
+  align-items: center;
 }
 .total .total-cost {
   font-family: "ubuntu-bold";
@@ -476,5 +475,33 @@ body {
   }
   .third-step .addons .price {
     font-size: 13px;
+  }
+  .costs {
+    padding: 10px 20px;
+  }
+  .costs .plan, .costs .plan-cost {
+    font-size: 14px;
+  }
+  .costs .plan {
+    line-height: 20px;
+  }
+  .costs .plus {
+    padding-bottom: 12px;
+  }
+  .costs .addon-wrap {
+    padding-top: 8px;
+    font-size: 14px;
+  }
+  .costs .addon-wrap .addons {
+    line-height: 30px;
+  }
+  .total {
+    font-size: 14px;
+    padding: 20px;
+  }
+  .total .total-cost {
+    font-family: "ubuntu-bold";
+    font-size: 18px;
+    color: #413EFF;
   }
 }/*# sourceMappingURL=default.css.map */
