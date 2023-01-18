@@ -5,7 +5,7 @@ body {
   height: auto;
   /* top: 0;
   left: 0; */
-  background-color: #d3e2ff;
+  background-color: #EEF5FF;
 }
 
 #container {
@@ -384,6 +384,9 @@ body {
 
 ------------------------------------------------------------------------------------------------------------------------ */
 @media (max-width: 971px) {
+  body {
+    background-color: white;
+  }
   #container {
     width: 375px;
     height: 667px;
@@ -391,6 +394,8 @@ body {
   #container .box {
     border-radius: 0px;
     display: inline-block;
+    box-shadow: none;
+    background-color: #EEF5FF;
   }
   .navbar {
     width: 375px;

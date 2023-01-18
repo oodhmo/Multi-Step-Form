@@ -7,8 +7,8 @@ body {
     /* top: 0;
     left: 0; */
 
-    background-color: #d3e2ff;
-    //#EEF5FF
+    background-color: #EEF5FF;
+    //
 }
 
 // desktop
@@ -441,6 +441,10 @@ body {
 
 @media (max-width: 971px) {
 
+    body {
+        background-color: white;
+    }
+
     #container {
         width: 375px;
         height: 667px;
@@ -448,6 +452,8 @@ body {
         .box {
             border-radius: 0px;
             display: inline-block;
+            box-shadow: none;
+            background-color: #EEF5FF;
         }
     }
 
