@@ -198,6 +198,7 @@ body {
 }
 
 .dollar {
+    font-family: 'ubuntu-regular';
     margin-bottom: 4px;
 }
 
@@ -253,6 +254,7 @@ body {
 /* ------------------------------ STEP 3 ------------------------------ */
 
 .addon {
+    font-family: 'ubuntu-regular';
     font-size: 15px;
     display: flex;
     padding: 17px 15px;
@@ -292,6 +294,7 @@ body {
     }
 
     .price {
+        font-family: 'ubuntu-medium';
         margin-left: auto;
         color: #5B49D9;
     }
@@ -482,12 +485,12 @@ body {
     .content {
         background-color: white;
         border-radius: 10px;
-        width: 280px;
+        width: 290px;
         height: 500px;
         top: 57%;
         left: 50%;
         transform: translate(-50%, -50%);
-        padding: 27px 30px;
+        padding: 27px 25px;
 
         grid-template-rows: 41px 70px 360px 50px;
 
@@ -496,7 +499,71 @@ body {
         }
 
         .semi-title {
+            width: 280px;
             line-height: 24px;
+        }
+    }
+
+    // step1
+    .options {
+        display: block;
+
+        .icon {
+            margin: 0;
+        }
+
+        .option {
+            display: flex;
+            padding: 16px 18px;
+            width: 100%;
+            margin-bottom: 13px;
+
+            .info {
+                margin-left: 14px;
+                line-height: 20px;
+            }
+
+            .option-nm {
+                margin: 0;
+            }
+
+            .dollar {
+                
+                margin: 0;
+            }
+        }
+    }
+
+    .btn-area {
+        padding: 8px;
+    }
+
+    .select-area {
+        padding-top: 0px;
+    }
+
+    .third-step {
+        .addons {
+            .addon {
+                padding: 13px 15px;
+            }
+
+            .txts {
+                line-height: 20px;
+            }
+
+            .card-nm {
+                letter-spacing: -0.5px;
+                font-size: 15px;
+            }
+
+            .card-des {
+                font-size: 12px;
+            }
+
+            .price {
+                font-size: 13px;
+            } 
         }
     }
 }

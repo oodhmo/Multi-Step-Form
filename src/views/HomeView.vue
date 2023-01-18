@@ -13,7 +13,7 @@
             </li>
           </ul>
         </div>
-        
+
           <div class="content">
             <div class="title" v-if="nowContent.title">{{nowContent.title}}</div>
             <div class="semi-title" v-if="nowContent.semititle">{{ nowContent.semititle }}</div>
@@ -53,10 +53,12 @@
                 <div class="options">
                   <button v-for="item in items.STEP2" :key="item.name" :class="['option non-selected', {'selected': item.id === commonsStore.plan}]" @click="commonsStore.setPlanItem(item.id)">
                     <img :src="require(`@/assets/images/${item.icon}`)" class="icon" />
-                    <div class="option-nm card-nm">{{ item.name }}</div>
-                    <div class="dollar card-des" v-if="!isYearly">{{ item.monthly }}</div>
-                    <div class="dollar card-des" v-if="isYearly">{{ item.yearly }}</div>
-                    <div v-if="isYearly" class="discount">{{ item.discount }}</div>
+                    <div class="info">
+                      <div class="option-nm card-nm">{{ item.name }}</div>
+                      <div class="dollar card-des" v-if="!isYearly">{{ item.monthly }}</div>
+                      <div class="dollar card-des" v-if="isYearly">{{ item.yearly }}</div>
+                      <div v-if="isYearly" class="discount">{{ item.discount }}</div>
+                    </div>
                   </button>
                 </div>
 
@@ -76,7 +78,7 @@
               </div>
 
               <!--          STEP 3          -->
-              <div v-else-if="commonsStore.nowTab === '3'">
+              <div v-else-if="commonsStore.nowTab === '3'" class="third-step">
                 <div class="addons">
                   <button v-for="addon in items.STEP3" :key="addon.id" :class="['addon non-selected', {'selected':commonsStore.addons.indexOf(addon) !== -1}]" @click="commonsStore.setAddonItems(addon)">
                     <span :class="['checkbox', {'check': commonsStore.addons.indexOf(addon) !== -1}]">

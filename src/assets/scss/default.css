@@ -175,6 +175,7 @@ body {
 }
 
 .dollar {
+  font-family: "ubuntu-regular";
   margin-bottom: 4px;
 }
 
@@ -226,6 +227,7 @@ body {
 
 /* ------------------------------ STEP 3 ------------------------------ */
 .addon {
+  font-family: "ubuntu-regular";
   font-size: 15px;
   display: flex;
   padding: 17px 15px;
@@ -259,6 +261,7 @@ body {
   line-height: 22px;
 }
 .addon .price {
+  font-family: "ubuntu-medium";
   margin-left: auto;
   color: #5B49D9;
 }
@@ -415,18 +418,63 @@ body {
   .content {
     background-color: white;
     border-radius: 10px;
-    width: 280px;
+    width: 290px;
     height: 500px;
     top: 57%;
     left: 50%;
     transform: translate(-50%, -50%);
-    padding: 27px 30px;
+    padding: 27px 25px;
     grid-template-rows: 41px 70px 360px 50px;
   }
   .content .title {
     font-size: 24px;
   }
   .content .semi-title {
+    width: 280px;
     line-height: 24px;
+  }
+  .options {
+    display: block;
+  }
+  .options .icon {
+    margin: 0;
+  }
+  .options .option {
+    display: flex;
+    padding: 16px 18px;
+    width: 100%;
+    margin-bottom: 13px;
+  }
+  .options .option .info {
+    margin-left: 14px;
+    line-height: 20px;
+  }
+  .options .option .option-nm {
+    margin: 0;
+  }
+  .options .option .dollar {
+    margin: 0;
+  }
+  .btn-area {
+    padding: 8px;
+  }
+  .select-area {
+    padding-top: 0px;
+  }
+  .third-step .addons .addon {
+    padding: 13px 15px;
+  }
+  .third-step .addons .txts {
+    line-height: 20px;
+  }
+  .third-step .addons .card-nm {
+    letter-spacing: -0.5px;
+    font-size: 15px;
+  }
+  .third-step .addons .card-des {
+    font-size: 12px;
+  }
+  .third-step .addons .price {
+    font-size: 13px;
   }
 }/*# sourceMappingURL=default.css.map */
