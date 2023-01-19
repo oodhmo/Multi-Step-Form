@@ -481,6 +481,7 @@ body {
         .step {
             margin: 0;
             .num {
+                padding: 7px 13px;
                 margin: 0px 8px;
                 display: flex;
             }
@@ -495,7 +496,7 @@ body {
         font-family: "ubuntu-regular";
         background-color: white;
         border-radius: 10px;
-        width: 290px;
+        //width: 290px;
         height: auto;
         padding: 27px 25px;
         display: inline-block;
@@ -666,7 +667,7 @@ body {
             cursor:pointer;
             font-family: "ubuntu-regular";
             border-radius: 4px;
-            padding: 12px 14px;
+            padding: 12px 0;
             font-size: 14px;
         }
 
@@ -676,6 +677,10 @@ body {
             color: white;
             background-color: #03295A;
             border: 1px solid #03295A;
+        }
+
+        .lft-btn {
+            left: 12px;
         }
     }
 
