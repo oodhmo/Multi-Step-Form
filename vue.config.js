@@ -2,5 +2,5 @@ const { defineConfig } = require('@vue/cli-service')
 module.exports = defineConfig({
   transpileDependencies: true,
   outputDir: './docs',
-  publicPath: '/multi-step-form'
+  publicPath: '/Multi-Step-Form'
 })
