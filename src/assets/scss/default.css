@@ -16,15 +16,17 @@ body {
   left: 50%;
   transform: translate(-50%, -50%);
 }
-#container .box {
-  background-color: white;
-  width: 100%;
-  height: 100%;
-  border-radius: 20px;
-  box-shadow: 1px 4px 11px rgb(213, 213, 213);
-  box-sizing: border-box;
-  display: grid;
-  grid-template-columns: 300px 610px;
+@media (min-width: 971px) {
+  #container .box {
+    background-color: white;
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+    box-shadow: 1px 4px 11px rgb(213, 213, 213);
+    box-sizing: border-box;
+    display: grid;
+    grid-template-columns: 300px 610px;
+  }
 }
 
 .navbar {
@@ -69,25 +71,26 @@ body {
   letter-spacing: 1px;
 }
 
-.content {
-  font-family: "ubuntu-regular";
-  display: grid;
-  grid-template-rows: 50px 55px 360px 50px;
-  width: 500px;
-  position: absolute;
-  top: 50%;
-  left: 38%;
-  transform: translateY(-50%);
+@media (min-width: 971px) {
+  .content {
+    font-family: "ubuntu-regular";
+    display: grid;
+    grid-template-rows: 50px 55px 360px 50px;
+    width: 500px;
+    position: absolute;
+    top: 50%;
+    left: 38%;
+    transform: translateY(-50%);
+  }
+  .content .title {
+    font-family: "ubuntu-bold";
+    font-size: 30px;
+    color: #1A365B;
+  }
+  .content .semi-title {
+    color: #95969B;
+  }
 }
-.content .title {
-  font-family: "ubuntu-bold";
-  font-size: 30px;
-  color: #1A365B;
-}
-.content .semi-title {
-  color: #95969B;
-}
-
 .form {
   margin-bottom: 20px;
 }
@@ -390,15 +393,17 @@ body {
   #container {
     width: 375px;
     height: 667px;
+    background-color: #EEF5FF;
   }
   #container .box {
     border-radius: 0px;
-    display: inline-block;
-    box-shadow: none;
-    background-color: #EEF5FF;
+    display: grid;
+    grid-template-rows: 100px;
+    box-sizing: border-box;
   }
   .navbar {
     width: 375px;
+    height: 152px;
     margin: 0;
     background-image: url("@/assets/images/bg-sidebar-mobile.svg");
   }
@@ -420,19 +425,22 @@ body {
     display: none;
   }
   .content {
+    font-family: "ubuntu-regular";
     background-color: white;
     border-radius: 10px;
     width: 290px;
-    top: 57%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    height: auto;
     padding: 27px 25px;
-    grid-template-rows: 41px 70px 340px 50px;
+    display: inline-block;
+    margin: auto;
   }
   .content .title {
+    font-family: "ubuntu-bold";
     font-size: 24px;
+    color: #1A365B;
   }
   .content .semi-title {
+    color: #95969B;
     width: 280px;
     line-height: 24px;
   }

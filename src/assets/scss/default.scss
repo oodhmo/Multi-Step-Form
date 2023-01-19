@@ -22,18 +22,20 @@ body {
     left: 50%;
     transform: translate(-50%, -50%);
 
-    .box{
-        background-color: white;
-        width: 100%;
-        height: 100%;
-
-        border-radius: 20px;
-        box-shadow: 1px 4px 11px rgb(213, 213, 213);
-
-        box-sizing: border-box;
-
-        display: grid;
-        grid-template-columns: 300px 610px;
+    @media (min-width: 971px) {
+        .box{
+            background-color: white;
+            width: 100%;
+            height: 100%;
+    
+            border-radius: 20px;
+            box-shadow: 1px 4px 11px rgb(213, 213, 213);
+    
+            box-sizing: border-box;
+    
+            display: grid;
+            grid-template-columns: 300px 610px;
+        }
     }
 }
 
@@ -86,26 +88,31 @@ body {
     }
 }
 
-.content {
-    font-family: "ubuntu-regular";
-    display: grid;
-    grid-template-rows: 50px 55px 360px 50px;
-    width: 500px;
-    position: absolute;
-    top: 50%;
-    left: 38%;
-    transform: translateY(-50%);
+@media (min-width:971px) {
 
-    .title {
-        font-family: "ubuntu-bold";
-        font-size: 30px;
-        color: #1A365B;
+    .content {
+        font-family: "ubuntu-regular";
+        display: grid;
+        grid-template-rows: 50px 55px 360px 50px;
+        width: 500px;
+        position: absolute;
+        top: 50%;
+        left: 38%;
+        transform: translateY(-50%);
+    
+        .title {
+            font-family: "ubuntu-bold";
+            font-size: 30px;
+            color: #1A365B;
+        }
+    
+        .semi-title {
+            color: #95969B;
+        }
     }
 
-    .semi-title {
-        color: #95969B;
-    }
 }
+
 
 // 텍스트 폼
 .form {
@@ -448,17 +455,19 @@ body {
     #container {
         width: 375px;
         height: 667px;
+        background-color: #EEF5FF;
 
         .box {
             border-radius: 0px;
-            display: inline-block;
-            box-shadow: none;
-            background-color: #EEF5FF;
+            display: grid;
+            grid-template-rows: 100px;
+            box-sizing: border-box;
         }
     }
 
     .navbar {
         width: 375px;
+        height: 152px;
         margin: 0;
         background-image: url('@/assets/images/bg-sidebar-mobile.svg');
 
@@ -483,22 +492,24 @@ body {
     }
 
     .content {
+        font-family: "ubuntu-regular";
         background-color: white;
         border-radius: 10px;
         width: 290px;
-        //height: 500px;
-        top: 57%;
-        left: 50%;
-        transform: translate(-50%, -50%);
+        height: auto;
         padding: 27px 25px;
+        display: inline-block;
 
-        grid-template-rows: 41px 70px 340px 50px;
-
+        margin: auto;
+    
         .title {
+            font-family: "ubuntu-bold";
             font-size: 24px;
+            color: #1A365B;
         }
 
         .semi-title {
+            color: #95969B;
             width: 280px;
             line-height: 24px;
         }
