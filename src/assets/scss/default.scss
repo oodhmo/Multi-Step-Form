@@ -366,26 +366,26 @@ body {
 
 
 /* ------------------------------ thank you ------------------------------ */
-
-.appreciate {
-    position: absolute;
-    text-align: center;
-
-    top: 50%;
-    transform: translateY(-50%);
-
-    line-height: 60px;
-
-    .thank-you {
-        font-family: "ubuntu-bold";
-        font-size: 30px;
-        color: #1A365B;
+@media (min-width: 971px) {
+    .appreciate {
+        position: absolute;
+        text-align: center;
+    
+        top: 50%;
+        transform: translateY(-50%);
+    
+        line-height: 60px;
     }
+}
 
-    .notice {
-        line-height: 25px;
-        color:#93939B;
-    }
+.thank-you {
+    font-family: "ubuntu-bold";
+    font-size: 30px;
+    color: #1A365B;
+}
+.notice {
+    line-height: 25px;
+    color:#93939B;
 }
 
 
@@ -676,6 +676,26 @@ body {
             color: white;
             background-color: #03295A;
             border: 1px solid #03295A;
+        }
+    }
+
+    
+    .appreciate {
+        text-align: center;
+        margin: 70px 0;
+        line-height: 40px;
+
+        .thankyou-icon{
+            width: 60px;
+        }
+
+        .thank-you {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        .notice {
+            font-size: 16px;
         }
     }
 }

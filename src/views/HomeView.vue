@@ -133,7 +133,7 @@
               <!--          Thank you page          -->
               <div v-if="commonsStore.nowTab === '5'">
                 <diV class="appreciate">
-                  <img src="@/assets/images/icon-thank-you.svg">
+                  <img src="@/assets/images/icon-thank-you.svg" class="thankyou-icon">
                   <div class="thank-you">Thank you!</div>
                   <div class="notice">
                     Thanks for confirming your subscription! We hope you have fun using our platform. If you ever need support, please feel free to email us at support@loremgaming.com.
@@ -142,7 +142,7 @@
               </div>
               
             </div>
-            <div class="btns" v-if="commonsStore.nowTab !== '5'">
+            <div :class="['btns', {'none': commonsStore.nowTab === '5'}]" v-if="commonsStore.nowTab !== '5'">
               <button class="lft-btn" @click="goBack" v-if="commonsStore.nowTab !== '1'">Go Back</button>
               <button class="rgt-btn" v-if="commonsStore.nowTab !== '4'" @click="onSubmit">Next Step</button>
               <button class="rgt-btn confirm" v-else-if="commonsStore.nowTab === '4'" @click="onSubmit">Confirm</button>
