@@ -15,7 +15,7 @@
         </div>
 
         <div class="content">
-          <div class="title" v-if="nowContent.title">{{nowContent.title}}</div>
+          <div class="title top-area" v-if="nowContent.title">{{nowContent.title}}</div>
           <div class="semi-title" v-if="nowContent.semititle">{{ nowContent.semititle }}</div>
           <div class="forms">
 
@@ -23,7 +23,7 @@
               <div v-if="commonsStore.nowTab === '1'">
                 <div class="form form-name">
                   <div class="labels">
-                    <label for="name">Name</label>
+                    <label for="name" class="label-name">Name</label>
                     <label for="name" v-if="validation.nameVal === false" class="alert">This field is required</label>
                   </div>
                   <input v-model="commonsStore.personalInfo.name" type="text" id="name" placeholder="e.g.Stephen King" :class="[{'error': validation.nameVal === false}]" required />
@@ -31,7 +31,7 @@
                 
                 <div class="form form-email">
                   <div class="labels">
-                    <label for="email">Email Address</label>
+                    <label for="email" class="label-name">Email Address</label>
                     <label for="email" v-if="validation.emailVal === false" class="alert">This field is required</label>
                   </div>
                   <input v-model="commonsStore.personalInfo.email" type="text" id="email" placeholder="e.g. stephenking@lorem.com" :class="[{'error': validation.emailVal === false}]" required />
@@ -39,7 +39,7 @@
                 
                 <div class="form form-phone">
                   <div class="labels">
-                    <label for="phone">Phone Number</label>
+                    <label for="phone" class="label-name">Phone Number</label>
                     <label for="phone" v-if="validation.phoneVal === false" class="alert">This field is required</label>
                   </div>
                   <input v-model="commonsStore.personalInfo.phone" type="text" id="phone" placeholder="e.g. +1 234 567 890" :class="[{'error': validation.phoneVal === false}]" required/>

@@ -3,12 +3,8 @@ body {
     min-width: 1024px;
     width: 100%;
     height: auto;
-    //position: absolute;
-    /* top: 0;
-    left: 0; */
 
     background-color: #EEF5FF;
-    //
 }
 
 // desktop
@@ -396,21 +392,33 @@ body {
 
 
 /* ------------------------------ BUTTONS ------------------------------ */
-.rgt-btn, .lft-btn {
-    cursor:pointer;
-    font-family: "ubuntu-regular";
-    border-radius: 8px;
-    padding: 13px 18px;
-    font-size: 16px;
+
+@media (min-width: 971px) {
+
+    .rgt-btn, .lft-btn {
+        cursor:pointer;
+        font-family: "ubuntu-regular";
+        border-radius: 8px;
+        padding: 13px 18px;
+        font-size: 16px;
+    }
+    
+    .rgt-btn {
+        width: 110.24px;
+        float: right;
+        color: white;
+        background-color: #03295A;
+        border: 1px solid #03295A;
+    }
+
+    .lft-btn {
+        color: #93939B;
+        background-color: white;
+        border: 1px solid white;
+    }
+
 }
 
-.rgt-btn {
-    width: 110.24px;
-    float: right;
-    color: white;
-    background-color: #03295A;
-    border: 1px solid #03295A;
-}
 
 .rgt-btn:hover {
     background-color: #174A89;
@@ -425,12 +433,6 @@ body {
 .confirm:hover {
     background-color: #6865ff !important;
     border: 1px solid #6865ff !important;
-}
-
-.lft-btn {
-    color: #93939B;
-    background-color: white;
-    border: 1px solid white;
 }
 
 .lft-btn:hover {
@@ -500,6 +502,8 @@ body {
         padding: 27px 25px;
         display: inline-block;
 
+        box-shadow: 0 8px 10px -4px rgb(213, 213, 213);
+
         margin: auto;
     
         .title {
@@ -511,7 +515,29 @@ body {
         .semi-title {
             color: #95969B;
             width: 280px;
-            line-height: 24px;
+            line-height: 23px;
+        }
+    }
+
+    // step1
+    .top-area {
+        margin-bottom: 10px;
+    }
+
+    .forms {
+        margin: 17px 0px;
+
+        .form {
+            margin: 10px 0;
+        }
+
+        .labels {
+            font-size: 8px;
+            margin: 4px 0;
+        }
+
+        .label-name {
+            color:#215390;
         }
     }
 
@@ -622,5 +648,13 @@ body {
         .notice {
             width: 290px;
         }
+    }
+
+    // bottom buttons
+    .btns {
+        position: fixed;
+        background-color: white;
+
+        width: 100%;
     }
 }
