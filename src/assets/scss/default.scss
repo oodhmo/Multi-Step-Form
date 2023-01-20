@@ -452,22 +452,11 @@ body {
         background-color: white;
     }
 
-    @media Desktop {
-        #container {
-            height: 667px;
-        }
-    }
-
-    @media Mobile {
-        #container {
-            height: 100vh;
-            min-height: 667px;
-        }
-    }
-
     #container {
         width: 375px;
         background-color: #EEF5FF;
+        height: 100vh;
+        min-height: 667px;
 
         .box {
             border-radius: 0px;
