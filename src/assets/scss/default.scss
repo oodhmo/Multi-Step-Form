@@ -155,8 +155,6 @@ body {
     border: 1px solid #9D5A63;
 }
 
-
-
 /* ------------------------------ STEP 2 ------------------------------ */
 
 // 3 buttons
@@ -471,13 +469,6 @@ body {
         height: 152px;
         margin: 0;
         background-image: url('@/assets/images/bg-sidebar-mobile.svg');
-
-        ul {
-            display: flex;
-            justify-content: center;
-            padding: 0;
-            margin: 12px 0;
-        }
 
         .step {
             margin: 0;
