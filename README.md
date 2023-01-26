@@ -1,24 +1,52 @@
-# multi-step-form
+# Multi Step Form
 
-## Project setup
-```
-npm install
-```
+#Typescript #Vue3.x (#Pinia) #SCSS 
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+Deployment: https://hoijoii.github.io/Multi-Step-Form/
 
-### Compiles and minifies for production
-```
-npm run build
-```
+<hr>
 
-### Lints and fixes files
-```
-npm run lint
-```
+## Desktop
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+<br>
+
+:small_orange_diamond: STEP 1
+<img src="./src/assets/images/multi-1.png">
+<img src="./src/assets/images/multi-2.png">
+
+<br>
+
+:small_orange_diamond: STEP 2
+
+(Monthly)
+<img src="./src/assets/images/multi-3.png">
+
+(Yearly)
+<img src="./src/assets/images/multi-4.png">
+
+<br>
+
+:small_orange_diamond: STEP 3
+<img src="./src/assets/images/multi-5.png">
+
+
+<br>
+
+:small_orange_diamond: STEP 4
+<img src="./src/assets/images/multi-6.png">
+
+<br>
+
+:small_orange_diamond: Thank you page
+<img src="./src/assets/images/multi-7.png">
+
+
+<hr>
+
+## Mobile
+
+<img src="./src/assets/images/multi-mobile-1.png">
+<img src="./src/assets/images/multi-mobile-2.png">
+
+<br>
+<br>
