@@ -2,7 +2,9 @@
 
 #Typescript #Vue3.x (#Pinia) #SCSS 
 
-Deployment: https://hoijoii.github.io/Multi-Step-Form/
+#### :rocket: Deployment: https://hoijoii.github.io/Multi-Step-Form/
+
+<br>
 
 ## Desktop
 
@@ -40,7 +42,6 @@ Deployment: https://hoijoii.github.io/Multi-Step-Form/
 
 
 ## Mobile
-
 <img src="./src/assets/images/multi-mobile-1.png">
 <img src="./src/assets/images/multi-mobile-2.png">
 
