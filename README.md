@@ -4,8 +4,6 @@
 
 Deployment: https://hoijoii.github.io/Multi-Step-Form/
 
-<hr>
-
 ## Desktop
 
 <br>
@@ -40,8 +38,6 @@ Deployment: https://hoijoii.github.io/Multi-Step-Form/
 :small_orange_diamond: Thank you page
 <img src="./src/assets/images/multi-7.png">
 
-
-<hr>
 
 ## Mobile
 
