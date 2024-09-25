@@ -2,7 +2,7 @@
 
 #Typescript #Vue3.x (#Pinia) #SCSS 
 
-#### :rocket: Deployment: https://hoijoii.github.io/Multi-Step-Form/
+#### :rocket: Deployment: https://oodhmo.github.io/Multi-Step-Form/
 
 <br>
 
